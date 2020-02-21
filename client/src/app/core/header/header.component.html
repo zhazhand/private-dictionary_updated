@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg navbar-light portrait">
+  <button class="navbar-toggler" type="button" >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarPortrait">
+
+    <ul class="navbar-nav">
+      <li class="nav-item" *ngFor="let link of links" [routerLinkActive]="link.children ? '' :'active'">
+        <a class="nav-link" >
+          {{link.name}}
+        </a>
+        <div *ngIf="link.children" class="dropdown-menu">
+          <a *ngFor="let item of link.children">
+            {{item.name}}
+          </a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Exit</a>
+      </li>
+
+    </ul>
+  </div>
+</nav>
+<nav class="bg-primary desktop">
+  <ul class="nav nav-tabs justify-content-end">
+    <li class="nav-item" *ngFor="let link of links" [routerLinkActive]="link.children ? '' :'active'">
+      <a class="nav-link" [routerLink]="link.children ? null :[link.url]">
+        {{link.name}}
+      </a>
+      <div *ngIf="link.children" class="dropdown-menu">
+        <a *ngFor="let item of link.children" class="dropdown-item" [routerLink]="[item.url]">
+          {{item.name}}
+        </a>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Exit</a>
+    </li>
+
+  </ul>
+</nav>
