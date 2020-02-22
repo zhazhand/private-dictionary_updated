@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuItem } from './menu-item.interface';
+
 
 @Component({
   selector: 'app-header',
@@ -6,19 +8,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.less']
 })
 export class HeaderComponent implements OnInit {
-  links = [
-    {url: '/irregular', name: 'Irregular verbs'},
-    {url: '/vocabulary', name: 'Private vocabulary'},
-    {
-      url: '/additionally', name: 'Additionally', children: [
-        {url: '/separable', name: 'Separable'},
-        {url: '/gerund', name: 'Gerund'},
-        {url: '/infinitive', name: 'Infinitive'},
-        {url: '/phrases', name: 'Phrases'},
-      ]
-    },
-    {url: '/assistance', name: 'Guide'}
+  menu: MenuItem[] = [
+    { name: 'Irregular verbs', path: 'irregular' },
+    { name: 'Private vocabulary', path: 'vocabulary' },
+    { name: 'Additionally', path: 'additionally', children: [
+      { name: 'Separable', path: 'separable' },
+      { name: 'Gerund', path: 'gerund' },
+      { name: 'Infinitive', path: 'infinitive' },
+      { name: 'Phrases', path: 'phrases' },
+      { name: 'Stative', path: 'stative' }
+    ] },
+    { name: 'Guide', path: '/assistance' }
   ];
+
+  public isMenuCollapsed: boolean = true;
+
   constructor() { }
 
   ngOnInit(): void {

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NgbTooltipModule, NgbNavModule, NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbTooltipModule, NgbNavModule, NgbCollapseModule, NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -8,12 +8,14 @@ import { NgbTooltipModule, NgbNavModule, NgbCollapseModule } from '@ng-bootstrap
   imports: [
     NgbNavModule,
     NgbCollapseModule,
+    NgbDropdownModule,
     NgbTooltipModule,
     CommonModule
   ],
   exports: [
     NgbNavModule,
-    NgbCollapseModule, 
+    NgbCollapseModule,
+    NgbDropdownModule, 
     NgbTooltipModule,
     CommonModule
   ]
