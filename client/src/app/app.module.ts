@@ -6,17 +6,21 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './core/header/header.component';
 import { FooterComponent } from './core/footer/footer.component';
 import { BootstrapModule } from './core/bootstrap/bootstrap.module';
+import { GuideModule } from './modules/guide/guide.module';
+import { TemporaryPageComponent } from './core/temporary-page/temporary-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    TemporaryPageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BootstrapModule
+    BootstrapModule,
+    GuideModule
   ],
   providers: [],
   bootstrap: [AppComponent]
