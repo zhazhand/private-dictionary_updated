@@ -1,0 +1,40 @@
+<div class="row justify-content-between">
+    <div class="pt-1 input-group input-group-sm col-lg-3 col-6 col-sm-6 order-lg-1">
+      <input type="text" class="form-control h-100"
+             id="searchFilter" placeholder="search">
+      <div class="input-group-append">
+        <button class="btn btn-outline-primary" type="button" id="button-addon2">
+          <app-duster-icon></app-duster-icon>
+        </button>
+      </div>
+    </div>
+    <div class="h-100 pt-1 col-lg-2 col-6 col-sm-6 order-lg-3">
+      <div>
+        <button
+          class="btn btn-sm btn-danger btn-block"
+          title="Удалить весь список">
+          Delete list
+        </button>
+      </div>
+    </div>
+    <div class="h-100 pt-1 col-lg-4 col-6 col-sm-6 order-lg-2 form-inline">
+      <div class="row justify-content-between h-100">
+        <div class="col-7 col-sm-5">
+          <label for="orderList" class="w-100 label-for-select">Order by </label>
+        </div>
+        <div class="col-5 col-sm-7 h-100">
+          <select
+            class="form-control pt-0 h-100 "
+            id="orderList">
+            <option *ngFor="let l of category" [value]="l.value">{{l.type}}</option>
+          </select>
+
+        </div>
+      </div>
+    </div>
+    <div class="h-100 pt-1 col-lg-2 col-6 col-sm-6 order-lg-4">
+      <button class="btn btn-sm btn-success btn-block" title="Добавить слово">
+        Add new
+      </button>
+    </div>
+  </div>

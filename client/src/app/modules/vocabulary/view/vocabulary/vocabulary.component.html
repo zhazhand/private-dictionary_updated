@@ -1,0 +1,16 @@
+<div class="container">
+    <h3 class="text-center mt-2 mb-4">My vocabulary</h3>
+    <app-control-panel></app-control-panel>
+    <app-common-table
+    [list]="exportList"
+    [choice] ="exportChoice"
+    [hideLoader] ="exportHideLoader"
+    [linkName] ="exportLinkName"
+    [search] ="exportSearch"
+    [paramSearch] ="exportParamSearch"
+    [selectedType] ="exportSelectedType"
+    [thName] ="exportThName"
+    (downloadDf)="addDefault()"
+  >
+</app-common-table>
+</div>

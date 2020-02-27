@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -8,6 +9,8 @@ import { FooterComponent } from './core/footer/footer.component';
 import { BootstrapModule } from './core/bootstrap/bootstrap.module';
 import { GuideModule } from './modules/guide/guide.module';
 import { TemporaryPageComponent } from './core/temporary-page/temporary-page.component';
+import { GetDefaultListService } from './shared/services/get-default-list.service';
+import { VocabularyModule } from './modules/vocabulary/vocabulary.module';
 
 @NgModule({
   declarations: [
@@ -17,12 +20,14 @@ import { TemporaryPageComponent } from './core/temporary-page/temporary-page.com
     TemporaryPageComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     BootstrapModule,
-    GuideModule
+    GuideModule,
+    VocabularyModule
   ],
-  providers: [],
+  providers: [ GetDefaultListService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

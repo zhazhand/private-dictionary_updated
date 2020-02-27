@@ -8,7 +8,6 @@ const routes: Routes = [
   { path: '', redirectTo: 'assistance', pathMatch: 'full' },
   {path: 'assistance', component: GuideComponent},
   {path: 'irregular', component: TemporaryPageComponent},
-  {path: 'vocabulary', component: TemporaryPageComponent},
   {path: 'separable', component: TemporaryPageComponent},
   {path: 'gerund', component: TemporaryPageComponent},
   {path: 'infinitive', component: TemporaryPageComponent},
