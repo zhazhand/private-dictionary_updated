@@ -8,3 +8,5 @@ router.get('/:id', passport.authenticate('jwt', {session: false}), controller.ge
 router.delete('/:id', passport.authenticate('jwt', {session: false}), controller.remove);
 router.post('/', passport.authenticate('jwt', {session: false}), controller.create);
 router.patch('/:id', passport.authenticate('jwt', {session: false}), controller.update);
+
+module.exports = router;

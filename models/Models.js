@@ -1,9 +1,8 @@
 const mongoose = require('mongoose');
 
-module.exports = mongoose.model('gerund', require('./CommonPatternOfModel'));
-module.exports = mongoose.model('infinitive', require('./CommonPatternOfModel'));
-module.exports = mongoose.model('irregular', require('./CommonPatternOfModel'));
-module.exports = mongoose.model('phrase', require('./CommonPatternOfModel'));
-module.exports = mongoose.model('separable', require('./CommonPatternOfModel'));
-module.exports = mongoose.model('stative', require('./CommonPatternOfModel'));
-module.exports = mongoose.model('vocabulary', require('./CommonPatternOfModel'));
+module.exports.Gerund = mongoose.model('gerund', require('./CommonPatternOfModel'));
+module.exports.Infinitive = mongoose.model('infinitive', require('./CommonPatternOfModel'));
+module.exports.Phrase = mongoose.model('phrase', require('./CommonPatternOfModel'));
+module.exports.Separable = mongoose.model('separable', require('./CommonPatternOfModel'));
+module.exports.Stative = mongoose.model('stative', require('./CommonPatternOfModel'));
+module.exports.Vocabulary = mongoose.model('vocabulary', require('./CommonPatternOfModel'));

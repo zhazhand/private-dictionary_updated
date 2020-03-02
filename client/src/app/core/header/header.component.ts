@@ -18,7 +18,11 @@ export class HeaderComponent implements OnInit {
       { name: 'Phrases', path: 'phrases' },
       { name: 'Stative', path: 'stative' }
     ] },
-    { name: 'Guide', path: 'assistance' }
+    { name: 'Guide', path: 'assistance' },
+    {name: 'Enter', path: 'enter', children: [
+      {name: 'Login', path: 'login'},
+      {name: 'Registry', path: 'registry'}
+    ]}
   ];
 
   public isMenuCollapsed: boolean = true;

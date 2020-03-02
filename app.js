@@ -16,11 +16,15 @@ const phrasesRoutes = require('./routes/phrases');
 const keys = require('./config/keys');
 const app = express();
 
+mongoose.set('useNewUrlParser', true);
+mongoose.set('useFindAndModify', false);
+mongoose.set('useCreateIndex', true);
+mongoose.set('useUnifiedTopology', true);
 mongoose.connect(keys.mongoURI)
     .then(() => console.log('MongoDB connected.'))
     .catch(error => console.log(error));
 
-app.use(morgan);
+app.use(morgan('combined'));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(cors);

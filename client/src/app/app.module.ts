@@ -11,6 +11,7 @@ import { GuideModule } from './modules/guide/guide.module';
 import { TemporaryPageComponent } from './core/temporary-page/temporary-page.component';
 import { GetDefaultListService } from './shared/services/get-default-list.service';
 import { VocabularyModule } from './modules/vocabulary/vocabulary.module';
+import { AuthModule } from './modules/auth/auth.module';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { VocabularyModule } from './modules/vocabulary/vocabulary.module';
     AppRoutingModule,
     BootstrapModule,
     GuideModule,
-    VocabularyModule
+    VocabularyModule,
+    AuthModule
   ],
   providers: [ GetDefaultListService ],
   bootstrap: [AppComponent]

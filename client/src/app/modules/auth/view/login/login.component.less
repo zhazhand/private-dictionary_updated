@@ -1,0 +1,58 @@
+@import "../../../../../styles/main";
+
+.full-height {
+  min-height: 85vh;
+
+  .my-form {
+    min-width: 20rem;
+
+    .card {
+      color: @formLoginTitle;
+      border-bottom-width: 2px;
+
+      .form-group {
+        border-bottom-width: 2px !important;
+
+        .my-form-input {
+          color: @formLoginTitle;
+
+          &:focus {
+            color: @info;
+            outline: none;
+          }
+        }
+      }
+
+      .border-bottom {
+        &:hover {
+          border-bottom-color: @info  !important;
+          color: @info;
+          transition: .9s;
+        }
+      }
+
+      .error-helper-text {
+        min-height: 40px;
+        font-size: .75rem;
+      }
+
+      .border-bottom.invalid {
+        border-bottom: 2px solid @danger  !important;
+      }
+    }
+    [disabled] {
+        cursor: no-drop;
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .full-height {
+    min-height: calc(100vh - 59px);
+
+    .my-form {
+        min-width:0;
+      z-index: 1050;
+    }
+  }
+}
