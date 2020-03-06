@@ -21,7 +21,7 @@ export class HeaderComponent implements OnInit {
     { name: 'Guide', path: 'assistance' },
     {name: 'Enter', path: 'enter', children: [
       {name: 'Login', path: 'login'},
-      {name: 'Registry', path: 'registry'}
+      {name: 'Registry', path: 'register'}
     ]}
   ];
 

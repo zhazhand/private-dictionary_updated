@@ -5,7 +5,7 @@ import { LoginComponent } from './view/login/login.component';
 
 const authRouts: Routes = [
   {path: 'login', component: LoginComponent},
-  {path: 'registry', component: RegistryComponent}
+  {path: 'register', component: RegistryComponent}
 ];
 
 

@@ -1,4 +1,4 @@
 module.exports = {
-    mongoURI: 'mongodb://Andrii:23theodor08@ds042687.mlab.com:42687/private-dictionary_updated',
+    mongoURI: 'mongodb://Andrii:z123456@ds151453.mlab.com:51453/private-dictionary_updated',
     jwt: 'dev-jwt'
 }

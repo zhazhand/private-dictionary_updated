@@ -23,6 +23,9 @@ mongoose.set('useUnifiedTopology', true);
 mongoose.connect(keys.mongoURI)
     .then(() => console.log('MongoDB connected.'))
     .catch(error => console.log(error));
+    
+app.use(passport.initialize());
+require('./middleware/passport')(passport);
 
 app.use(morgan('combined'));
 app.use(bodyParser.urlencoded({extended: true}));
