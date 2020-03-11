@@ -10,8 +10,8 @@ export class CommonCRUDService {
   constructor( private http: HttpClient ) { }
   
   //To get all list
-  fetch(): Observable<DefaultListItem[]>{
-    return this.http.get<DefaultListItem[]>(`/api/vocabulary`)
+  fetch(category: string): Observable<DefaultListItem[]>{
+    return this.http.get<DefaultListItem[]>(`/api${category}`)
   }
 
   //To get just one item (for editing or removing)

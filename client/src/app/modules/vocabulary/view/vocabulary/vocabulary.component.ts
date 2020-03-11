@@ -30,7 +30,7 @@ export class VocabularyComponent implements OnInit, OnDestroy {
   }
 
   getList() {
-    this.subscription.add(this.vocabularyService.fetch()
+    this.subscription.add(this.vocabularyService.fetch(this.exportLinkName)
         .subscribe(response => this.exportList = response));
   }
 
