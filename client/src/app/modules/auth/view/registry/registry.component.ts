@@ -15,8 +15,7 @@ export class RegistryComponent implements OnInit {
   aSub: Subscription;//переменная отвечает за отсутствие утечки памяти
 
   constructor(private auth: AuthService,
-              private router: Router) {
-  }
+              private router: Router) {}
 
 
   ngOnDestroy() {

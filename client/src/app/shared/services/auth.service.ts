@@ -4,9 +4,7 @@ import {Observable} from "rxjs";
 import {tap} from "rxjs/operators";
 import {User} from "../interfaces/user";
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class AuthService {
 
   private token = null;

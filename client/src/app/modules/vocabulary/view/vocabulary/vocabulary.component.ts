@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 
 import { GetDefaultListService } from 'src/app/shared/services/get-default-list.service';
+import { CommonCRUDService } from 'src/app/shared/services/common-crud.service';
 
 @Component({
   selector: 'app-vocabulary',
@@ -21,10 +22,16 @@ export class VocabularyComponent implements OnInit, OnDestroy {
   private subscription: Subscription = new Subscription();
 
 
-  constructor(private downloadDefault: GetDefaultListService) { }
+  constructor(private vocabularyService: CommonCRUDService,
+              private downloadDefault: GetDefaultListService) { }
 
   ngOnInit(): void {
-    this.exportList = [];
+    this.getList();
+  }
+
+  getList() {
+    this.subscription.add(this.vocabularyService.fetch()
+        .subscribe(response => this.exportList = response));
   }
 
   addDefault() {

@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const cors = require('cors');
+const cors = require('cors')();
 const passport = require('passport');
 const morgan = require('morgan');
 const path = require('path');
@@ -34,7 +34,7 @@ app.use(cors);
 
 app.use('/api/auth', authRoutes);
 app.use('/api/irregular', irregularRoutes);
-app.use('/api/list', vocabularyRoutes);
+app.use('/api/vocabulary', vocabularyRoutes);
 app.use('/api/separable', separableRoutes);
 app.use('/api/gerund', gerundRoutes);
 app.use('/api/infinitive', infinitiveRoutes);

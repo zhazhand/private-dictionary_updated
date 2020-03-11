@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +12,9 @@ import { TemporaryPageComponent } from './core/temporary-page/temporary-page.com
 import { GetDefaultListService } from './shared/services/get-default-list.service';
 import { VocabularyModule } from './modules/vocabulary/vocabulary.module';
 import { AuthModule } from './modules/auth/auth.module';
+import { CommonCRUDService } from './shared/services/common-crud.service';
+import { AuthService } from './shared/services/auth.service';
+import { TokenInterceptor } from './shared/classes/token.interceptor';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,16 @@ import { AuthModule } from './modules/auth/auth.module';
     VocabularyModule,
     AuthModule
   ],
-  providers: [ GetDefaultListService ],
+  providers: [
+    AuthService,
+    GetDefaultListService,
+    CommonCRUDService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      multi: true,
+      useClass: TokenInterceptor
+    }
+   ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

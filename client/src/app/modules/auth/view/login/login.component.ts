@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit {
     this.form.disable();
     this.aSub = this.auth.login(this.form.value).subscribe(
     (res: any) => {
-                        this.router.navigate(['/irregular']);
+                        this.router.navigate(['/vocabulary']);
                         },
     error => {
       //MaterialService.toast(error.error.message);

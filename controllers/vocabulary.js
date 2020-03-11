@@ -6,7 +6,7 @@ module.exports.getAll = async function (req, res) {
         const word = await Word.find({
             user: req.user.id
         });
-        res.status(200).json(word)
+        res.status(200).json(word);
     } catch (e) {
         errorHandler(res, e)
     }
