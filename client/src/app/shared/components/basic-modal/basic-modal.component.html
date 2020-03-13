@@ -1,0 +1,22 @@
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Delete list</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    Вы хотите удалить список полностью (<span class="text-primary text-bold">completely</span>) или выборочно (<span
+      class="text-info text-bold">selectively</span>)?
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary" title="удалить полностью" (click)="deleteList(true)">
+      Completely
+    </button>
+    <button type="button" class="btn btn-info" title="удалить выборочно" (click)="changeChoice()">
+      Selectively
+    </button>
+  </div>
+</ng-template>
+
+<button class="btn btn-lg btn-outline-primary" (click)="open(content)">Launch demo modal</button>

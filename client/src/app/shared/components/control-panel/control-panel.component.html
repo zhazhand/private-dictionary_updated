@@ -1,9 +1,11 @@
 <div class="row justify-content-between">
     <div class="pt-1 input-group input-group-sm col-lg-3 col-6 col-sm-6 order-lg-1">
       <input type="text" class="form-control h-100"
-             id="searchFilter" placeholder="search">
+             id="searchFilter" placeholder="search"
+             [disabled] = "abilityPush"
+             [(ngModel)]="searchWord" (ngModelChange)="onFieldChange($event)">
       <div class="input-group-append">
-        <button class="btn btn-outline-primary" type="button" id="button-addon2">
+        <button class="btn btn-outline-primary" type="button" id="button-addon2" [disabled] = "abilityPush" (click)="clearField()">
           <app-duster-icon></app-duster-icon>
         </button>
       </div>
@@ -12,7 +14,8 @@
       <div>
         <button
           class="btn btn-danger btn-block"
-          title="Удалить весь список">
+          title="Удалить весь список"
+          (click)="deleteList()">
           Delete list
         </button>
       </div>
@@ -25,7 +28,8 @@
         <div class="col-5 col-sm-7 h-100">
           <select
             class="form-control"
-            id="orderList">
+            id="orderList"
+            [disabled] = "abilityPush" [ngModel]="selectedCategory" (ngModelChange)="onSelect($event)">
             <option *ngFor="let l of category" [value]="l.value">{{l.type}}</option>
           </select>
 
@@ -33,7 +37,7 @@
       </div>
     </div>
     <div class="h-100 pt-1 col-lg-2 col-6 col-sm-6 order-lg-4">
-      <button class="btn btn-success btn-block" title="Добавить слово">
+      <button class="btn btn-success btn-block" [routerLink]="followTo" [disabled] = "abilityPush" title="Добавить слово">
         Add new
       </button>
     </div>

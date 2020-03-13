@@ -8,7 +8,7 @@
         </tr>
       </thead>
       <tr *ngFor="let item of words | listFilter : search : paramSearch | appOrderBy : selectedType" class="table-hover"
-          ><!-- [routerLink]="choice ? null : [linkName, item._id]" -->
+           [routerLink]="choice ? null : [linkName, item._id]" >
         <td *ngIf="choice" class="mw-40">
           <input #chkbx type="checkbox" [checked]="item.removable?'checked':null"
                  (change)="saveChanges(item, chkbx.checked)">

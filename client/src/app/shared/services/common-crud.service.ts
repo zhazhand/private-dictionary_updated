@@ -22,8 +22,12 @@ export class CommonCRUDService {
   create(category: string, name?: string, transcription?: string, translation?: string): Observable<DefaultListItem> {
     const fd = {name, transcription, translation};
 
-
     return this.http.post<DefaultListItem>(`/api${category}`, fd)
+  }
+
+  createCollection(category: string, collection: DefaultListItem[]): Observable<DefaultListItem[]> {
+
+    return this.http.post<DefaultListItem[]>(`/api${category}`, collection)
   }
 
   update(category: string, id: string, name: string, translation: string, transcription?: string, removable?: boolean): Observable<DefaultListItem> {

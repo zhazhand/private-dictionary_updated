@@ -3,6 +3,7 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {AuthService} from "../../../../shared/services/auth.service";
 import {Subscription} from "rxjs";
 import {ActivatedRoute, Params, Router} from "@angular/router";
+import { UserInfoService } from 'src/app/shared/services/user-info.service';
 //import {MaterialService} from "../shared/classes/material.service";
 
 @Component({
@@ -17,6 +18,7 @@ export class LoginComponent implements OnInit {
   aSub: Subscription;//переменная отвечает за отсутствие утечки памяти
 
   constructor(private auth: AuthService,
+              private userInfoService: UserInfoService,
               private router: Router,
               private route: ActivatedRoute) {
 }
@@ -47,7 +49,7 @@ export class LoginComponent implements OnInit {
   onSubmit(){
     this.form.disable();
     this.aSub = this.auth.login(this.form.value).subscribe(
-    (res: any) => {
+    (res: any) => {this.userInfoService.sendUserInfo(res);
                         this.router.navigate(['/vocabulary']);
                         },
     error => {

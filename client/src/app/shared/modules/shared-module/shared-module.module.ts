@@ -6,6 +6,9 @@ import { CommonTableComponent } from '../../components/common-table/common-table
 import { LoaderComponent } from '../../components/loader/loader.component';
 import { AppOrderByPipe } from '../../pipes/app-order-by.pipe';
 import { ListFilterPipe } from '../../pipes/list-filter.pipe';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { BasicModalComponent } from '../../components/basic-modal/basic-modal.component';
 
 
 
@@ -16,10 +19,14 @@ import { ListFilterPipe } from '../../pipes/list-filter.pipe';
     ControlPanelComponent,
     DusterIconComponent,
     CommonTableComponent,
-    LoaderComponent
+    LoaderComponent,
+    BasicModalComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    RouterModule
   ],
   exports: [
     AppOrderByPipe,
@@ -27,7 +34,8 @@ import { ListFilterPipe } from '../../pipes/list-filter.pipe';
     ControlPanelComponent,
     DusterIconComponent,
     CommonTableComponent,
-    LoaderComponent
+    LoaderComponent,
+    BasicModalComponent
   ]
 })
 export class SharedModule { }

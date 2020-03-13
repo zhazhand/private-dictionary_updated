@@ -1,16 +1,23 @@
-<div class="container">
-    <h3 class="text-center mt-2 mb-4">My vocabulary</h3>
-    <app-control-panel></app-control-panel>
-    <app-common-table
+<div class="container pb-5">
+  <app-basic-modal></app-basic-modal>
+  <h3 class="text-center mt-2 mb-4">My vocabulary</h3>
+  <app-control-panel
+    [choice] ="exportChoice"
+    [list]="exportList"
+    [abilityPush]="exportAbilityPush"
+    (takeWord)="onSearchWord($event)" (takeType)="changeOrderBy($event)" (delList)="deleteList()"
+  >
+  </app-control-panel>
+  <app-common-table
     [list]="exportList"
     [choice] ="exportChoice"
     [hideLoader] ="exportHideLoader"
     [linkName] ="exportLinkName"
-    [search] ="exportSearch"
+    [search] ="exportSearchWord"
     [paramSearch] ="exportParamSearch"
     [selectedType] ="exportSelectedType"
     [thName] ="exportThName"
     (downloadDf)="addDefault()"
   >
-</app-common-table>
+  </app-common-table>
 </div>

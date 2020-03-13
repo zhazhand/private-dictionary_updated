@@ -15,6 +15,7 @@ import { AuthModule } from './modules/auth/auth.module';
 import { CommonCRUDService } from './shared/services/common-crud.service';
 import { AuthService } from './shared/services/auth.service';
 import { TokenInterceptor } from './shared/classes/token.interceptor';
+import { UserInfoService } from './shared/services/user-info.service';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { TokenInterceptor } from './shared/classes/token.interceptor';
     AuthService,
     GetDefaultListService,
     CommonCRUDService,
+    UserInfoService,
     {
       provide: HTTP_INTERCEPTORS,
       multi: true,
